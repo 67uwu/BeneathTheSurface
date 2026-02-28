@@ -12,7 +12,7 @@ var inBoat = false
 
 func _physics_process(delta: float) -> void:
 	if(global_position.y >60):
-		grav = 20
+		grav = 40
 		underwater = true
 	else:
 		grav = 750
