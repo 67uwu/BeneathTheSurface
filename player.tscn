@@ -107,8 +107,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(27, 22)
 
-[node name="Node2D" type="Node2D" unique_id=393179645]
-position = Vector2(1, 0)
+[node name="Player" type="Node2D" unique_id=393179645]
+position = Vector2(1, -15)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1282125474]
 position = Vector2(15, -16)

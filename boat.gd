@@ -1,4 +1,7 @@
-extends Sprite2D
+extends AnimatedSprite2D
+
+signal left
+signal right
 
 var inBoat = false
 
@@ -10,9 +13,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var direction
 	if(inBoat):
-		var direction = Input.get_axis("ui_left", "ui_right")
+		direction = Input.get_axis("ui_left", "ui_right")
 		position.x += direction*10 # Replace with function body.
+	if(Input.is_action_pressed("ui_left")):
+		play("left")
+	else:
+		play("default")
+		
+	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	inBoat = true
