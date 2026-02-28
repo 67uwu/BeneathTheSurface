@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dacyf0qjv0v4g"]
+
+[ext_resource type="Script" uid="uid://8r3vy4c6pge6" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cjdna0xx61aml" path="res://StrangeUndergroundPlatformer/Sorted/Character.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bfly4mgm026iw" path="res://icon.svg" id="3_hqtel"]
+[ext_resource type="Script" uid="uid://cgt1nx70g0q5v" path="res://boat.gd" id="4_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(10, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(0, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(32, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jxqw"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(160, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw050"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(192, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(224, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(256, 2, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(288, 2, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivps1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jxqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw050")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvl01")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=393179645]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1282125474]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=71995506]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_hqtel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1189055604]
+sprite_frames = SubResource("SpriteFrames_ivps1")
+frame_progress = 0.29846928
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1793698206]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=318858232]
+scale = Vector2(0.4453125, 0.4453125)
+texture = ExtResource("3_hqtel")
+script = ExtResource("4_sweqy")
