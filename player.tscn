@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8r3vy4c6pge6" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cjdna0xx61aml" path="res://StrangeUndergroundPlatformer/Sorted/Character.png" id="2_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://bfly4mgm026iw" path="res://icon.svg" id="3_hqtel"]
-[ext_resource type="Script" uid="uid://cgt1nx70g0q5v" path="res://boat.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://dpjw2dxb2pc48" path="res://boatCheck.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(10, 22)
@@ -65,6 +64,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(11, 20)
+
 [node name="Node2D" type="Node2D" unique_id=393179645]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1282125474]
@@ -80,7 +82,11 @@ frame_progress = 0.29846928
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1793698206]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=318858232]
-scale = Vector2(0.4453125, 0.4453125)
-texture = ExtResource("3_hqtel")
-script = ExtResource("4_sweqy")
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=793800734]
+script = ExtResource("3_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1633055109]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_sweqy")
+
+[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
