@@ -22,11 +22,11 @@ func _physics_process(delta: float) -> void:
 	if (not is_on_floor() )and doGravity:
 		velocity.y += grav * delta
 	if(underwater):
-		breath -= 7*delta
+		breath -= 4*delta
 	else:
 		breath = 100
 	if(breath <= 0):
-		HP -= 25*delta
+		HP -= 10*delta
 	doMotion()
 	respawn()
 	move_and_slide()

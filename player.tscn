@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dpjw2dxb2pc48" path="res://boatCheck.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://dnf0t4t7b3o70" path="res://player.png" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://crd4w1l867ty0" path="res://player_animation.gd" id="4_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://bvtayxa54qo5v" path="res://control.tscn" id="5_2hs0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(27, 20)
@@ -127,6 +128,17 @@ script = ExtResource("4_2hs0m")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1793698206]
 position = Vector2(-16, 15)
+
+[node name="Control" parent="CharacterBody2D/Camera2D" unique_id=1370052875 instance=ExtResource("5_2hs0m")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -552.0
+offset_top = -296.0
+offset_right = -552.0
+offset_bottom = -296.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=793800734]
 position = Vector2(-6, 12)
